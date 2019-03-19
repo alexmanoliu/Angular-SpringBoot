@@ -1,0 +1,9 @@
+<section>
+  <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+    <h2 class="addTaskLabel">Add Task</h2>
+    <mat-form-field>
+      <input matInput name="task" [(ngModel)]="item" type="text" placeholder="Add-task">
+    </mat-form-field>
+    <button mat-raised-button color="accent" (click)="add()" class="addTask">Add task</button>
+  </form>
+</section>

@@ -1,0 +1,16 @@
+<section>
+  <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" (submit)="login()">
+    <mat-form-field>
+      <input matInput type="text" #name="ngModel" name="username" placeholder="Enter Username"
+        [(ngModel)]="userData.username" required (input)="error=false">
+      <mat-error *ngIf="username && username.errors != null">Please enter a valid username</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="password" #pass="ngModel" name="pass" placeholder="Enter Password"
+        [(ngModel)]="userData.password" required (input)="error=false">
+      <mat-error *ngIf="pass && pass.errors != null">Please enter a valid password</mat-error>
+    </mat-form-field>
+    <mat-error *ngIf="error">ERROR: Invalid info</mat-error>
+    <button mat-raised-button color="accent" type="submit">Login</button>
+  </form>
+</section>
